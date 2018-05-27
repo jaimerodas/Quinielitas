@@ -27,3 +27,7 @@ Metrics/LineLength:
     - 'config/initializers/*'
     - 'config/application.rb'
     - 'config/puma.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
