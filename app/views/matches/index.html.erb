@@ -1,3 +1,7 @@
-<h1>Partidos</h1>
+<h1>
+  <%= @matches.count %>
+  <%= t 'activerecord.models.match', count: @matches.count %>
+</h1>
+
 <%= link_to 'Crear Partido', new_match_path %>
 <%= render @matches %>
