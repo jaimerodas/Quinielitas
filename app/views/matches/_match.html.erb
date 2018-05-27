@@ -11,7 +11,10 @@
       <td><%= match.home_team %></td>
       <td><%= match.home_team_score || '-' %></td>
       <td rowspan="2">
+        <% unless match.status == :finished %>
         <%= link_to 'Editar', edit_match_path(match) %>
+        <% end %>
+
         <% if match.status == :ready %>
         <%= link_to 'Borrar', match_path(match),
             method: :delete, data: {

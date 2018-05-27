@@ -13,7 +13,10 @@
   <div class="field">
     <%= t.label :playtime %>
     <%= t.datetime_select(
-      :playtime, default: Time.zone.parse('2018-06-14 10:00:00')
+      :playtime,
+      default: Time.zone.parse('2018-06-14 10:00:00'),
+      datetime_separator: 'a las',
+      discard_minute: true
     ) %>
     <span class="help">hora de México</span>
   </div>
