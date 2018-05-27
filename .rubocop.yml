@@ -1,7 +1,16 @@
+AllCops:
+  TargetRubyVersion: 2.5.1
+  Exclude:
+    - 'db/schema.rb'
+
+Rails:
+  Enabled: true
+
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'db/migrate/*'
     - 'app/helpers/application_helper.rb'
     - 'app/mailers/application_mailer.rb'
     - 'app/models/application_record.rb'
@@ -15,8 +24,6 @@ Style/MixinUsage:
 Metrics/LineLength:
   Exclude:
     - 'config/environments/*'
+    - 'config/initializers/*'
     - 'config/application.rb'
     - 'config/puma.rb'
-    - 'config/initializers/*'
-
-inherit_from: .rubocop_todo.yml
