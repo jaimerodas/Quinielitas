@@ -1,0 +1,23 @@
+<%= form_for @match do |t| %>
+  <%= render 'shared/form_errors', object: @match %>
+  <div class="field">
+    <%= t.label :home_team %>
+    <%= t.text_field :home_team %>
+  </div>
+
+  <div class="field">
+    <%= t.label :away_team %>
+    <%= t.text_field :away_team %>
+  </div>
+
+  <div class="field">
+    <%= t.label :playtime %>
+    <%= t.datetime_select(
+      :playtime, default: Time.zone.parse('2018-06-14 10:00:00')
+    ) %>
+    <span class="help">hora de México</span>
+  </div>
+
+  <%= t.button type: :submit %>
+  <%= link_to 'Regresar', matches_path %>
+<% end %>
