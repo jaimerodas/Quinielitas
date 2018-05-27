@@ -7,6 +7,8 @@ ruby '2.5.1'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.5'
+gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'pagy'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'

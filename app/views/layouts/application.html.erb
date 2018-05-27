@@ -13,6 +13,11 @@
     <% flash.each do |name, msg| %>
       <div class="alert <%= name %>"><%= msg %></div>
     <% end %>
+
+    <div>
+      <%= link_to 'Cerrar sesión', sign_out_path %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
