@@ -115,3 +115,7 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+  pagy:
+    nav:
+      prev: 'Anterior'
+      next: 'Siguiente'

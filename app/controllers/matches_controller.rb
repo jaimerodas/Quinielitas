@@ -2,10 +2,12 @@
 
 # Manages matches in the app
 class MatchesController < ApplicationController
+  include Pagy::Backend
+
   before_action :find_match, only: %i[edit update destroy]
 
   def index
-    @matches = Match.all.order(playtime: :asc)
+    @pagy, @matches = pagy Match.all.order(playtime: :asc), items: 10
   end
 
   def new

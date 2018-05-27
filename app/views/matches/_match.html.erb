@@ -1,36 +1,22 @@
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Resultado</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="home">
-      <td><%= match.home_team %></td>
-      <td><%= match.home_team_score || '-' %></td>
-      <td rowspan="2">
-        <% unless match.status == :finished %>
-        <%= link_to 'Editar', edit_match_path(match) %>
-        <% end %>
+<li>
+  <h2>
+    <%= match.home_team %>
+    vs.
+    <%= match.away_team %>
+  </h2>
+  <div class="date">
+    <%= l match.playtime %>
+  </div>
+  <div class="actions">
+    <% unless match.status == :finished %>
+    <%= link_to 'Editar', edit_match_path(match) %>
+    <% end %>
 
-        <% if match.status == :ready %>
-        <%= link_to 'Borrar', match_path(match),
-            method: :delete, data: {
-              confirm: 'Esto borrará el partido y toda la información asociada'
-            } %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="away">
-      <td><%= match.away_team %></td>
-      <td><%= match.away_team_score || '-' %></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <th colspan="3"><%= l match.playtime %></th>
-    </tr>
-  </tfoot>
-</table>
+    <% if match.status == :ready %>
+    <%= link_to 'Borrar', match_path(match),
+        method: :delete, data: {
+          confirm: 'Esto borrará el partido y toda la información asociada'
+        } %>
+    <% end %>
+  </div>
+</li>

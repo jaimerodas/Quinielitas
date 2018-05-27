@@ -1,7 +1,16 @@
 <h1>
-  <%= @matches.count %>
-  <%= t 'activerecord.models.match', count: @matches.count %>
+  <%= @pagy.count %>
+  <%= t 'activerecord.models.match', count: @pagy.count %>
 </h1>
 
 <%= link_to 'Crear Partido', new_match_path %>
-<%= render @matches %>
+
+<% if @matches.any? %>
+<ul>
+  <%= render @matches %>
+</ul>
+
+<%== pagy_nav(@pagy) %>
+<% else %>
+  <h2>No hay partidos aún</h2>
+<% end %>
