@@ -4,7 +4,7 @@
 class MatchesController < ApplicationController
   include Pagy::Backend
 
-  before_action :signed_in?
+  before_action :signed_in_admin?
   before_action :find_match, only: %i[edit update destroy]
 
   def index

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :matches, except: %i[show]
   resources :bets, only: %i[index create update]
+  resources :users, only: %i[index destroy] do
+    resource :admin, only: %i[create destroy]
+  end
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get 'sign_out', to: 'sessions#destroy'

@@ -1,0 +1,7 @@
+<h1>Usuarios</h1>
+
+<ul>
+  <%= render @users %>
+</ul>
+
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>

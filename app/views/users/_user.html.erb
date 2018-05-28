@@ -1,0 +1,30 @@
+<li>
+  <h2>
+    <%= user.name %>
+    <% if user.admin? %>
+    <span>Admin</span>
+    <% end %>
+  </h2>
+  <div class="">
+    se unió hace
+    <%= distance_of_time_in_words_to_now user.created_at %>
+  </div>
+  <div class="actions">
+    <% if user != @current_user %>
+    <%= link_to 'Borrar',
+                user_path(user),
+                method: :delete,
+                data: { confirm: 'Esto borrará todas las apuestas de este usuario.' } %>
+    <% end %>
+
+    <% if !user.admin? %>
+    <%= link_to 'Hacer admin',
+                user_admin_path(user),
+                method: :post %>
+    <% elsif user != @current_user %>
+    <%= link_to 'Hacer admin',
+                user_admin_path(user),
+                method: :delete %>
+    <% end %>
+  </div>
+</li>

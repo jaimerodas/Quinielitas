@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     current_user_is User.find_or_create_from_auth_hash(auth_hash)
-    redirect_to matches_path
+    redirect_to root_path
   end
 
   def destroy

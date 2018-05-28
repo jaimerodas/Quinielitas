@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    return if current_user
+    return true if current_user
     redirect_to sign_in_path
+  end
+
+  def signed_in_admin?
+    return true if signed_in? && current_user.admin?
+    redirect_to root_path
   end
 end

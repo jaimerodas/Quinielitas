@@ -59,6 +59,45 @@ es:
       long: "%A, %d de %B de %Y a las %I:%M %p"
       short: "%d de %b a las %H:%M hrs"
     pm: pm
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: como una hora
+        other: como %{count} horas
+      about_x_months:
+        one: como un mes
+        other: como %{count} meses
+      about_x_years:
+        one: como 1 año
+        other: como %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      x_days:
+        one: un día
+        other: "%{count} días"
+      x_minutes:
+        one: un minuto
+        other: "%{count} minutos"
+      x_months:
+        one: un mes
+        other: "%{count} meses"
+      x_years:
+        one: un año
+        other: "%{count} años"
+      x_seconds:
+        one: un segundo
+        other: "%{count} segundos"
   errors:
     format: "%{attribute} %{message}"
     messages:
