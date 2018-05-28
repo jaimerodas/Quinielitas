@@ -2,6 +2,8 @@
 
 # One game between two teams.
 class Match < ApplicationRecord
+  include MatchComparisonOperations
+
   has_many :bets, dependent: :destroy
 
   validates :home_team, presence: true
