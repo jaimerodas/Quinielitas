@@ -10,7 +10,7 @@
   <%= render @matches %>
 </ul>
 
-<%== pagy_nav(@pagy) %>
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 <% else %>
   <h2>No hay partidos aún</h2>
 <% end %>
