@@ -1,0 +1,21 @@
+<%= form_for bet do |t| %>
+  <%= render 'shared/form_errors', object: bet %>
+  <%= t.hidden_field :match_id %>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= bet.match.home_team %></td>
+        <td><%= t.number_field :home_team_score %></td>
+      </tr>
+      <tr>
+        <td><%= bet.match.away_team %></td>
+        <td><%= t.number_field :away_team_score %></td>
+      </tr>
+      <tr>
+        <td rowspan="2"><%= l bet.match.playtime %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= t.button type: :submit %>
+<% end %>

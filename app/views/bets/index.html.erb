@@ -1,0 +1,10 @@
+<h1>Mis Apuestas</h1>
+<% if @pending_bets.any? %>
+<h2>Pendientes</h2>
+<%= render @pending_bets %>
+<% end %>
+
+<% if @made_bets.any? %>
+<h2>Ya hechas</h2>
+<%= render @made_bets %>
+<% end %>

@@ -14,9 +14,12 @@
       <div class="alert <%= name %>"><%= msg %></div>
     <% end %>
 
-    <div>
+    <nav>
+      <%= link_to 'Inicio', root_path %>
+      <%= link_to 'Mis apuestas', bets_path %>
+      <%= link_to 'Partidos', matches_path %>
       <%= link_to 'Cerrar sesión', sign_out_path %>
-    </div>
+    </nav>
 
     <%= yield %>
   </body>
